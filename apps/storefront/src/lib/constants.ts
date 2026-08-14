@@ -33,7 +33,7 @@ export const CART_FIELDS =
 
 export const NAV_LINKS = [
   { href: "/shop", label: "Shop" },
-  { href: "/categories/shirts", label: "Collection" },
+  { href: "/categories/red-wine", label: "Collection" },
   { href: "/search", label: "Search" },
   { href: "/wishlist", label: "Wishlist" },
 ] as const;

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
@@ -14,8 +13,11 @@ export default function NotFound() {
         The page you requested is no longer available, or the link may be
         incorrect.
       </p>
-      <Link href="/" className="mt-8">
-        <Button>Return home</Button>
+      <Link
+        href="/"
+        className="mt-8 inline-flex h-11 items-center justify-center rounded-[6px] border border-[var(--color-accent)] bg-[var(--color-accent)] px-6 text-xs uppercase tracking-[0.16em] text-white transition-colors hover:bg-[var(--color-accent-hover)]"
+      >
+        Return home
       </Link>
     </div>
   );

@@ -1,20 +1,11 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { EDITORIAL_IMAGE } from "@/lib/constants";
 
 export function EditorialStory() {
   return (
     <section className="bg-white">
       <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:px-10 md:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="relative aspect-[4/5] overflow-hidden"
-        >
+        <div className="relative aspect-[4/5] overflow-hidden animate-[fadeUp_0.55s_ease-out]">
           <Image
             src={EDITORIAL_IMAGE}
             alt="Editorial wine still life"
@@ -22,7 +13,7 @@ export function EditorialStory() {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </motion.div>
+        </div>
         <div className="max-w-lg">
           <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted)]">
             Our story

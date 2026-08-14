@@ -2,23 +2,22 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { clsx } from "clsx";
 
-export function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
+export function ProductGallery({
+  images,
+  alt,
+}: {
+  images: string[];
+  alt: string;
+}) {
   const [active, setActive] = useState(0);
   const current = images[active] || images[0];
 
   return (
     <div className="space-y-4">
       <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-blush)]">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0.4 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.35 }}
-          className="absolute inset-0"
-        >
+        <div key={current} className="absolute inset-0 animate-[fadeUp_0.35s_ease-out]">
           <Image
             src={current}
             alt={alt}
@@ -27,7 +26,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </motion.div>
+        </div>
       </div>
       {images.length > 1 ? (
         <div className="grid grid-cols-4 gap-3">

@@ -36,7 +36,7 @@ const emptyAddress: AddressForm = {
   address_2: "",
   city: "",
   postal_code: "",
-  country_code: "gb",
+  country_code: "nl",
   phone: "",
 };
 
@@ -355,6 +355,8 @@ export function CheckoutForm() {
                   setAddress((a) => ({ ...a, country_code: e.target.value }))
                 }
               >
+                <option value="nl">Netherlands</option>
+                <option value="be">Belgium</option>
                 <option value="gb">United Kingdom</option>
                 <option value="de">Germany</option>
                 <option value="fr">France</option>

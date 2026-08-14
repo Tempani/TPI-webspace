@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { HERO_IMAGE, SITE_NAME } from "@/lib/constants";
 
@@ -19,12 +18,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-black/20" />
       <div className="relative z-10 mx-auto flex min-h-[88vh] max-w-[1440px] flex-col justify-end px-5 pb-16 pt-28 md:px-10 md:pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-2xl text-white"
-        >
+        <div className="max-w-2xl animate-[fadeUp_0.7s_ease-out] text-white">
           <p className="font-[family-name:var(--font-serif)] text-5xl tracking-[0.28em] md:text-7xl">
             {SITE_NAME}
           </p>
@@ -50,7 +44,7 @@ export function Hero() {
               </Button>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

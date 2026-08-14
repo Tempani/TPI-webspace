@@ -56,14 +56,24 @@ export default async function seedTempani({ container }: ExecArgs) {
       ...providerIds.filter((id: string) => id.includes("mollie")),
     ].filter((id, index, arr) => arr.indexOf(id) === index)
 
-    if (desired.length) {
-      await regionModule.updateRegions(region.id, {
-        payment_providers: desired,
-      })
-      logger.info(
-        `Region ${region.name}: payment providers → ${desired.join(", ")}`
-      )
-    }
+    // Attach NL/BE for Mollie methods (iDEAL / Bancontact)
+    await regionModule.updateRegions(region.id, {
+      payment_providers: desired,
+      countries: [
+        "nl",
+        "be",
+        "gb",
+        "de",
+        "dk",
+        "se",
+        "fr",
+        "es",
+        "it",
+      ],
+    })
+    logger.info(
+      `Region ${region.name}: payment providers → ${desired.join(", ")}`
+    )
   }
 
   // Ensure Tempani categories exist

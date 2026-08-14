@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
@@ -46,7 +45,8 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => {
-            const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const active =
+              pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
@@ -54,12 +54,11 @@ export function SiteHeader() {
                 className="group relative text-[11px] uppercase tracking-[0.18em] text-[var(--color-ink)]"
               >
                 {link.label}
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-px bg-[var(--color-accent)]"
-                  initial={false}
-                  animate={{ width: active ? "100%" : "0%" }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.25 }}
+                <span
+                  className={clsx(
+                    "absolute -bottom-1 left-0 h-px bg-[var(--color-accent)] transition-all duration-250",
+                    active ? "w-full" : "w-0 group-hover:w-full"
+                  )}
                 />
               </Link>
             );
@@ -74,7 +73,10 @@ export function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-5 text-[11px] uppercase tracking-[0.18em]">
-          <Link href={customer ? "/account" : "/account/login"} className="hidden sm:inline">
+          <Link
+            href={customer ? "/account" : "/account/login"}
+            className="hidden sm:inline"
+          >
             {customer ? "Account" : "Sign in"}
           </Link>
           <Link href="/wishlist" className="relative">
