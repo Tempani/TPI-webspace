@@ -93,6 +93,22 @@ After payment, customers return to `/checkout/payment`, which completes the cart
 
 Without `MOLLIE_API_KEY`, the backend starts with the system/manual payment provider so local checkout still works.
 
+## Demo
+
+Storefront walkthrough recorded against the local stack (`:3000` + Medusa `:9000`):
+
+<video src="docs/demo/tempani-storefront-demo.mp4" controls width="720"></video>
+
+[Download demo video](docs/demo/tempani-storefront-demo.mp4)
+
+| Homepage | Shop | Product |
+| --- | --- | --- |
+| ![Homepage](docs/demo/01-homepage.png) | ![Shop](docs/demo/02-shop.png) | ![Product](docs/demo/03-product-detail.png) |
+
+| Cart | Checkout | Login |
+| --- | --- | --- |
+| ![Cart](docs/demo/07-cart-with-item.png) | ![Checkout](docs/demo/05-checkout.png) | ![Login](docs/demo/06-login.png) |
+
 ## WebFront
 
 Luxury white minimalist design: Cormorant Garamond + Manrope, burgundy accent,

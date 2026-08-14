@@ -31,13 +31,15 @@ export function AddToCart({ product }: { product: HttpTypes.StoreProduct }) {
     if (!variants.length) return undefined;
     if (!options.length) return variants[0];
 
-    return variants.find((variant) =>
+    const matched = variants.find((variant) =>
       (variant.options || []).every((opt) => {
         const optionId = opt.option_id;
         if (!optionId) return true;
         return selectedOptions[optionId] === opt.value;
       })
     );
+
+    return matched || variants[0];
   }, [variants, options, selectedOptions]);
 
   const price = selectedVariant

@@ -26,10 +26,10 @@ export const EDITORIAL_IMAGE =
   "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1600&q=80";
 
 export const PRODUCT_FIELDS =
-  "*variants.calculated_price,*variants.prices,*images,*options,*categories,*collection,+metadata";
+  "*variants,*variants.calculated_price,*variants.prices,*variants.options,*images,*options,*options.values,*categories,*collection,+metadata";
 
 export const CART_FIELDS =
-  "*items,*items.variant,*items.product,*region,*shipping_address,*billing_address,*shipping_methods,*payment_collection,*payment_collection.payment_sessions,+promotions";
+  "*items,*items.variant,*items.product,*region,*shipping_address,*billing_address,*shipping_methods,*payment_collection,*payment_collection.payment_sessions";
 
 export const NAV_LINKS = [
   { href: "/shop", label: "Shop" },

@@ -174,6 +174,19 @@ cd packages/TempaniMedusaKit
 swift test
 ```
 
+### API smoke test (2026-08-14)
+
+Verified against local Medusa Admin API (same routes the Swift SDK uses):
+
+| Step | Result |
+| --- | --- |
+| Admin login (JWT) | Pass |
+| List products | Pass |
+| Create product (`SDK Test Bottle`) | Pass |
+| Update product | Pass |
+
+Full log: [`TEST_RESULTS.md`](./TEST_RESULTS.md)
+
 ## Example
 
 See `Examples/ProductSyncExample.swift`.
