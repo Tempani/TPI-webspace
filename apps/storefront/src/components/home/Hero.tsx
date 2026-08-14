@@ -41,7 +41,7 @@ export function Hero() {
                 Shop the collection
               </Button>
             </Link>
-            <Link href="/categories/shirts">
+            <Link href="/shop">
               <Button
                 variant="secondary"
                 className="border-white/60 text-white hover:border-white"
