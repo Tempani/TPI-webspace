@@ -8,12 +8,15 @@ Production-ready e-commerce platform for **Tempani** — Medusa.js backend, Next
 apps/
   backend/      # Medusa v2 commerce API + Admin
   storefront/   # Next.js 15 luxury WebFront
+packages/
+  TempaniMedusaKit/  # Swift SPM SDK for Xcode / iOS product sync
 ```
 
 | Layer | Technology |
 | --- | --- |
 | Commerce engine | Medusa.js 2.19 |
 | Storefront | Next.js 15 (App Router) + TypeScript + Tailwind |
+| iOS Admin SDK | Swift Package `TempaniMedusaKit` (Xcode) |
 | Database | PostgreSQL (required by Medusa) |
 | Payments | Mollie (`@variablevic/mollie-payments-medusa`) |
 | Notifications | Local email provider (swap for Resend/SendGrid in prod) |
@@ -108,6 +111,17 @@ See:
 - `apps/storefront/.env.local.example`
 
 Never commit `.env` / `.env.local` files.
+
+## iOS / Xcode SDK
+
+Native Swift package for staff apps that create and update Medusa products:
+
+```text
+packages/TempaniMedusaKit
+```
+
+In Xcode: **File → Add Package Dependencies → Add Local…** → select that folder.
+See `packages/TempaniMedusaKit/README.md` for login, upload, and product CRUD examples.
 
 ## Scripts
 
