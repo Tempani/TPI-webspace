@@ -169,7 +169,7 @@ export default async function seedTempani({ container }: ExecArgs) {
       description:
         "A composed Cabernet with dark cherry, cedar, and a long mineral finish. Sourced from hillside parcels and aged with quiet restraint.",
       category: "red-wine",
-      price: 4800,
+      price: 48,
       image:
         "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
     },
@@ -179,7 +179,7 @@ export default async function seedTempani({ container }: ExecArgs) {
       description:
         "Crisp orchard fruit and citrus peel over fine acidity. An elegant white for long lunches and cool evenings.",
       category: "white-wine",
-      price: 3600,
+      price: 36,
       image:
         "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=1200&q=80",
     },
@@ -189,7 +189,7 @@ export default async function seedTempani({ container }: ExecArgs) {
       description:
         "Pale, precise, and quietly festive. Wild strawberry and rose petal with a dry, saline close.",
       category: "sparkling",
-      price: 4200,
+      price: 42,
       image:
         "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1200&q=80",
     },
@@ -199,7 +199,7 @@ export default async function seedTempani({ container }: ExecArgs) {
       description:
         "Stone-washed linen napkins and a table runner in warm ivory. Soft structure for everyday ceremony.",
       category: "lifestyle",
-      price: 8900,
+      price: 89,
       image:
         "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80",
     },

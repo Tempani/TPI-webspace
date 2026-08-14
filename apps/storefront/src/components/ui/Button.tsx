@@ -42,6 +42,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
+      type="button"
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-[6px] font-[family-name:var(--font-sans)] transition-colors duration-200 disabled:opacity-50 disabled:pointer-events-none",
         variants[variant],
