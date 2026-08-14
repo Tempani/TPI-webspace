@@ -1,11 +1,24 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Outfit, Playfair_Display, Cormorant_Garamond, Manrope } from "next/font/google";
 import { Providers } from "@/components/layout/Providers";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { CartDrawer } from "@/components/cart/CartDrawer";
+import { LayoutChrome } from "@/components/layout/LayoutChrome";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
 import "./globals.css";
+
+const outfit = Outfit({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-accent",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -55,13 +68,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorant.variable} ${manrope.variable} min-h-screen antialiased`}
+        className={`${outfit.variable} ${playfair.variable} ${cormorant.variable} ${manrope.variable} min-h-screen antialiased`}
       >
         <Providers>
-          <SiteHeader />
-          <main className="min-h-[70vh]">{children}</main>
-          <SiteFooter />
-          <CartDrawer />
+          <LayoutChrome>{children}</LayoutChrome>
         </Providers>
       </body>
     </html>

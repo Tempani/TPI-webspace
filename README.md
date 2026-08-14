@@ -93,10 +93,28 @@ After payment, customers return to `/checkout/payment`, which completes the cart
 
 Without `MOLLIE_API_KEY`, the backend starts with the system/manual payment provider so local checkout still works.
 
+## Homepage (Agroix design)
+
+The storefront home route (`/`) uses the Agroix smart-farming landing layout
+(Outfit + Playfair Display, full-bleed hero, trusted-by strip, solutions accordion,
+dashboard overlay, feature cards, farmer stories). Shop and account routes keep
+the Tempani commerce chrome.
+
+<video src="docs/demo/agroix-homepage-demo.mp4" controls width="720"></video>
+
+[Download Agroix homepage demo](docs/demo/agroix-homepage-demo.mp4)
+
+| Hero | Trusted by | Solutions |
+| --- | --- | --- |
+| ![Hero](docs/demo/agroix-01-hero.png) | ![Trusted](docs/demo/agroix-02-trusted.png) | ![Solutions](docs/demo/agroix-03-solutions.png) |
+
+| Made Simple | Feature cards | Stories |
+| --- | --- | --- |
+| ![Made Simple](docs/demo/agroix-04-made-simple.png) | ![Cards](docs/demo/agroix-05-cards.png) | ![Stories](docs/demo/agroix-06-stories.png) |
+
 ## WebFront
 
-Luxury white minimalist design: Cormorant Garamond + Manrope, burgundy accent,
-editorial product presentation, full customer journey:
+Shop / product / cart / checkout keep the Tempani commerce journey:
 
 Browse → Product → Cart → Checkout → Mollie → Confirmation → Account / Orders
 

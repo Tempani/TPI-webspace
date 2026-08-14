@@ -1,28 +1,32 @@
-import { BrandStatement } from "@/components/home/BrandStatement";
-import { EditorialStory } from "@/components/home/EditorialStory";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
-import { Hero } from "@/components/home/Hero";
-import { HomeCTA } from "@/components/home/HomeCTA";
-import { TrustStrip } from "@/components/home/TrustStrip";
-import { listProducts } from "@/lib/cart";
+import type { Metadata } from "next";
+import { AgroixHero } from "@/components/home/agroix/AgroixHero";
+import { TrustedBy } from "@/components/home/agroix/TrustedBy";
+import { MissionBand } from "@/components/home/agroix/MissionBand";
+import { SmartSolutions } from "@/components/home/agroix/SmartSolutions";
+import { MadeSimple } from "@/components/home/agroix/MadeSimple";
+import { SolutionCards } from "@/components/home/agroix/SolutionCards";
+import {
+  FarmerStories,
+  AgroixFooter,
+} from "@/components/home/agroix/FarmerStories";
 
-export default async function HomePage() {
-  let products: Awaited<ReturnType<typeof listProducts>>["products"] = [];
-  try {
-    const result = await listProducts({ limit: 8 });
-    products = result.products;
-  } catch {
-    products = [];
-  }
+export const metadata: Metadata = {
+  title: "Agroix — Smart Farming for Future Generations",
+  description:
+    "Practical agricultural technology for farmers, agribusinesses, and innovators — productivity with respect for the land.",
+};
 
+export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <BrandStatement />
-      <FeaturedProducts products={products} />
-      <TrustStrip />
-      <EditorialStory />
-      <HomeCTA />
-    </>
+    <div className="agroix-home bg-white text-[#152028]">
+      <AgroixHero />
+      <TrustedBy />
+      <MissionBand />
+      <SmartSolutions />
+      <MadeSimple />
+      <SolutionCards />
+      <FarmerStories />
+      <AgroixFooter />
+    </div>
   );
 }

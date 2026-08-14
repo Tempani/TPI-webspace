@@ -68,3 +68,24 @@ a {
     transform: translateY(0);
   }
 }
+
+@keyframes agroixFade {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.agroix-home {
+  font-family: var(--font-display), ui-sans-serif, sans-serif;
+}
+
+.agroix-home h1,
+.agroix-home h2,
+.agroix-home h3 {
+  font-family: var(--font-display), ui-sans-serif, sans-serif;
+}
