@@ -1,0 +1,39 @@
+{
+  "name": "tempani",
+  "private": true,
+  "packageManager": "npm@10.9.7",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "turbo start",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "backend:dev": "npm run dev --workspace=@tempani/backend",
+    "backend:seed": "npm run seed --workspace=@tempani/backend",
+    "storefront:dev": "npm run dev --workspace=@tempani/storefront",
+    "storefront:build": "npm run build --workspace=@tempani/storefront"
+  },
+  "devDependencies": {
+    "@medusajs/eslint-plugin": "2.19.0",
+    "ajv": "^8.13.0",
+    "eslint": "^9.39.4",
+    "jiti": "^2.7.0",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.14"
+  },
+  "workspaces": [
+    "apps/**",
+    "!apps/backend/.medusa/**"
+  ],
+  "overrides": {
+    "eslint": {
+      "ajv": "^6.12.4"
+    },
+    "@eslint/eslintrc": {
+      "ajv": "^6.12.4"
+    }
+  }
+}
